@@ -1,0 +1,8 @@
+{
+  "plugins": [
+    "plugins.credit_card",
+    "plugins.paypal",
+    "plugins.google_pay",
+    "plugins.apple_pay"
+  ]
+}

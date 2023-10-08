@@ -1,0 +1,13 @@
+,Timestamp,Device,Sensor,Value
+0,2022-01-01 00:00:00,Device1,Temperature,298.75
+1,2022-01-01 00:05:00,Device1,Humidity,0.7
+2,2022-01-01 00:10:00,Device1,Temperature,299.34999999999997
+3,2022-01-01 00:15:00,Device2,Temperature,300.25
+4,2022-01-01 00:20:00,Device2,Humidity,0.65
+5,2022-01-01 00:25:00,Device2,Temperature,301.45
+6,2022-01-01 00:30:00,Device3,Temperature,297.95
+7,2022-01-01 00:35:00,Device3,Humidity,0.75
+8,2022-01-01 00:40:00,Device3,Temperature,299.15
+9,2022-01-01 00:45:00,Device1,CO2,523.0
+10,2022-01-01 00:50:00,Device2,CO2,423.0
+11,2022-01-01 00:55:00,Device3,CO2,623.0
