@@ -163,10 +163,15 @@ cython_debug/
 .vscode
 .DS_Store
 
-*.toml
 *.ipynb
+*.lock
+
 before
 before.py
 after
 after.py
-poetry.lock
+
+*/*/pyproject.toml
+*/pyproject.toml
+*/*/poetry.toml
+*/poetry.toml
