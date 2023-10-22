@@ -22,14 +22,13 @@ class Language(StrEnum):
 
 
 def construct_parser(texts: dict[str, Any]) -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description="Get the current weather information for a city")
-    parser.add_argument("city", help="Name of the city to get the weather information for")
+    parser = argparse.ArgumentParser(description=texts["cli_description"])
+    parser.add_argument("city", help=texts["help_city"])
     parser.add_argument(
         "-c",
-        "--conditions",
-        dest="conditions",
+        "--condition",
+        dest="condition",
         metavar="CONDITION",
-        nargs="+",
         default=["temperature"],
         choices=texts["conditions_all"]
         + texts["conditions_temperature"]
@@ -52,10 +51,10 @@ def fetch_conditions_from_args(arg_condition: str, texts: dict[str, Any]) -> lis
         return [Condition.HUMIDITY]
     elif arg_condition in texts["conditions_wind"]:
         return [Condition.WIND]
-    elif arg_condition in texts["conditions_temperature"]:
-        return [Condition.TEMPERATURE]
-    else:
+    elif arg_condition in texts["conditions_all"]:
         return [Condition.TEMPERATURE, Condition.HUMIDITY, Condition.WIND]
+    else:
+        return [Condition.TEMPERATURE]
 
 
 def print_condition(
@@ -75,17 +74,25 @@ def print_condition(
 
 
 def main():
-    with open("texts.json", "r") as file:
+    with open("texts_all.json", "r") as file:
         texts_all_languages = json.load(file)
 
-    texts = texts_all_languages[Language.ENGLISH.value]
+    texts = texts_all_languages[Language.ENGLISH]
 
     parser = construct_parser(texts)
+
+    # Parse the arguments
     args = parser.parse_args()
 
-    weather_forecast = get_complete_forecast(http_get, args.api_key, args.city)
+    # Fetch the data from the OpenMapWeather API
+    weather_forecast = get_complete_forecast(
+        http_get_fn=http_get,
+        api_key=args.api_key,
+        city=args.city,
+    )
 
-    conditions = fetch_conditions_from_args(args.conditions, texts)
+    # Print the weather information
+    conditions = fetch_conditions_from_args(args.condition, texts)
     for condition in conditions:
         print_condition(condition, args.city, weather_forecast, texts)
 
