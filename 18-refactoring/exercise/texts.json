@@ -1,0 +1,28 @@
+{
+  "en": {
+    "help_city": "Name of the city to get the weather information for",
+    "help_condition": "Weather conditions to display. Choose between 'all' or 'a', 'temperature' or 't', 'humidity' or 'h', 'wind' or 'w'.",
+    "help_api_key": "API key for the OpenWeatherMap API",
+    "cli_description": "Get the current weather information for a city",
+    "info_temperature": "The current temperature in {city} is {temperature:.1f} °C.",
+    "info_humidity": "The current humidity in {city} is {humidity:.1f} %.",
+    "info_wind": "The current wind speed in {city} is {wind_speed:.1f} m/s from direction {wind_direction} degrees.",
+    "conditions_temperature": ["temperature", "t"],
+    "conditions_humidity": ["humidity", "h"],
+    "conditions_wind": ["wind", "w"],
+    "conditions_all": ["all", "a"]
+  },
+  "nl": {
+    "help_city": "Naam van de stad om weerinformatie voor op te vragen",
+    "help_condition": "Weercondities om weer te geven. Kies tussen 'alles' of 'a', 'temperatuur' of 't', 'luchtvochtigheid' of 'l', 'wind' of 'w'.",
+    "help_api_key": "API-sleutel voor de OpenWeatherMap API",
+    "cli_description": "Krijg de huidige weerinformatie voor een stad",
+    "info_temperature": "De huidige temperatuur in {city} is {temperature:.1f} °C.",
+    "info_humidity": "De huidige luchtvochtigheid in {city} is {humidity:.1f} %.",
+    "info_wind": "De huidige windsnelheid in {city} is {wind_speed:.1f} m/s uit richting {wind_direction} graden.",
+    "conditions_temperature": ["temperatuur", "t"],
+    "conditions_humidity": ["luchtvochtigheid", "l"],
+    "conditions_wind": ["wind", "w"],
+    "conditions_all": ["alles", "a"]
+  }
+}
