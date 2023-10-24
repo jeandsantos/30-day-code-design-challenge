@@ -1,5 +1,4 @@
 import itertools
-import operator
 import random
 from collections import Counter
 from dataclasses import dataclass
