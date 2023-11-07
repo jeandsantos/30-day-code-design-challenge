@@ -30,6 +30,11 @@ def main() -> None:
     editor.redo()
     editor.print_text()
 
+    editor.undo()
+    editor.undo()
+    editor.undo()
+    editor.print_text()
+
 
 if __name__ == "__main__":
     main()
